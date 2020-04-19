@@ -1,28 +1,26 @@
-import { combineReducers } from 'redux'
-import * as TYPES from '../types'
+import { combineReducers } from "redux";
+import * as TYPES from "../types";
 
 const initialState = {
-    people: []
-}
+  colors: [],
+};
 
-const handleStarWarsFetchSuccess = (state, action) => {
-    return {
-        ...state,
-        people : action.data 
-    }
-} 
+const handleColorAPIFetchSuccess = (state, action) => {
+  return {
+    ...state,
+    colors: action.data,
+  };
+};
 
-const starWars = (state = initialState, action) => {
-    const handlers = {
-        [TYPES.FETCH_STAR_WARS_SUCCESS]: handleStarWarsFetchSuccess
-    }
-    return handlers[action.type]
-        ? handlers[action.type](state, action)
-        : state
-}
+const colorAPI = (state = initialState, action) => {
+  const handlers = {
+    [TYPES.FETCH_COLORAPI_SUCCESS]: handleColorAPIFetchSuccess,
+  };
+  return handlers[action.type] ? handlers[action.type](state, action) : state;
+};
 
 const rootReducer = combineReducers({
-  starWars
-})
+  colorAPI,
+});
 
-export default rootReducer
+export default rootReducer;
