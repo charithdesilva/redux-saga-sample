@@ -7,6 +7,12 @@ class App extends Component {
     return (
       <div>
         <h1>Redux Saga - COLR API</h1>
+        <button onClick={this.props.fetchContinuouslyRequest}>
+          Start calling colours
+        </button>
+        <button onClick={this.props.fetchCancelledRequest}>
+          Cancel started sagas
+        </button>
         <div>
           {this.props.colorAPI.colors.map((color, i) => (
             <div key={i}>
@@ -18,9 +24,6 @@ class App extends Component {
             </div>
           ))}
         </div>
-        <button onClick={this.props.fetchContinuouslyRequest}>
-          Start calling colours
-        </button>
       </div>
     );
   }

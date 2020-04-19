@@ -8,6 +8,10 @@ export const fetchColorAPIRequest = () => ({
   type: TYPES.FETCH_COLORAPI_REQUEST,
 });
 
+export const fetchCancelledRequest = () => ({
+  type: TYPES.FETCH_CANCELED,
+});
+
 export const fetchContinuouslyRequest = () => {
   console.log("FETCH_CONTINUOUSLY ACTION");
   return {

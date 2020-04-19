@@ -1,10 +1,15 @@
 import { connect } from "react-redux";
 import App from "../components/App";
-import { fetchColorAPIRequest, fetchContinuouslyRequest } from "../actions";
+import {
+  fetchColorAPIRequest,
+  fetchContinuouslyRequest,
+  fetchCancelledRequest,
+} from "../actions";
 
 const mapStateToProps = ({ colorAPI }) => ({ colorAPI });
 
 const bindActionsToDispatch = (dispatch) => ({
+  fetchCancelledRequest: () => dispatch(fetchCancelledRequest()),
   fetchColorAPIRequest: () => dispatch(fetchColorAPIRequest()),
   fetchContinuouslyRequest: () => dispatch(fetchContinuouslyRequest()),
 });
