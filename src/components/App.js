@@ -18,7 +18,9 @@ class App extends Component {
             </div>
           ))}
         </div>
-        <button onClick={this.props.fetchContinuouslyRequest}>Load More</button>
+        <button onClick={this.props.fetchContinuouslyRequest}>
+          Start calling colours
+        </button>
       </div>
     );
   }
